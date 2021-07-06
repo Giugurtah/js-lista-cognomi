@@ -1,7 +1,6 @@
 var surnamesList = ["Bianchi", "Neri", "Rossi", "Verdi", "Gialli"];
 var message = "";
 var resultPlaceHolder = document.getElementById("result");
-var userPosition = 0;
 
 var surnameUser;
 do {
@@ -15,13 +14,10 @@ do {
     for (var i=0; i<surnamesList.length; i++) {
         console.log(i+1, surnamesList[i]);
         message += i+1 + ": " + surnamesList[i] + "<br>";
-        if (surnamesList[i] == surnameUser) {
-            userPosition = i+1;
-        }
     }
 
-    console.log("Il tuo cognome si trova in posizione: ", userPosition);
-    message += "Il cognome inserito si trova in posizione: " + userPosition + "<br>";
+    console.log("Il tuo cognome si trova in posizione: ", surnamesList.indexOf(surnameUser)+1);
+    message += "Il cognome inserito si trova in posizione: " + (surnamesList.indexOf(surnameUser)+1) + "<br>";
 
     do {
         var keepGoing = prompt("Si vuole aggiungere un altro cognome in lista?");
